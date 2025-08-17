@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <div className="h-full flex flex-col items-center justify-center text-center">
       <h1 className="text-5xl font-bold mb-6 text-slate-100">
-        Cosmic Event Tracker <span className="text-indigo-400">🌌</span>
+        Cosmic Event Tracker <span className="text-indigo-400"></span>
       </h1>
       <p className="text-lg mb-8">
         Your personal dashboard for tracking Near-Earth Objects.
@@ -27,4 +27,5 @@ export default function LandingPage() {
       </div>
     </div>
   );
+
 }
