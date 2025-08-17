@@ -23,9 +23,21 @@ function App() {
 
         <main className="flex-grow flex flex-col">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
+            {/* Public routes that redirect if user is logged in */}
+            <Route
+              path="/"
+              element={session ? <Navigate to="/home" /> : <LandingPage />}
+            />
+            <Route
+              path="/login"
+              element={session ? <Navigate to="/home" /> : <LoginPage />}
+            />
+            <Route
+              path="/signup"
+              element={session ? <Navigate to="/home" /> : <SignupPage />}
+            />
+
+            {/* Protected routes that redirect if user is not logged in */}
             <Route
               path="/home"
               element={session ? <HomePage /> : <Navigate to="/login" />}
